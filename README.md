@@ -72,8 +72,14 @@ If you have any questions, feel free to reach out:
 ## **Support**
 If you like what I do and would like to support my work, you can send donations to the following cryptocurrency wallets:
 
-- Bitcoin (BTC): `bc1qht76xssqdhdgl46lgwnjweks4x70ls898s7x60`
-- Monero (XMR): `85Ck9T8zpPHBpsbwyjqrquJnLed7qeYngFKgbaRggagfi17cD4UPShujnHga6zUFTJdEkPZsanWJfBNWQmZXGEom8eHsuR1`
+XMR 
+45GHkA3M1JVaY1nmDUHDXr2uxRg1hJheTB6DzakkEhU25MgBnd7szpEAiBCTQsMUEHXh1631e9gSBEjEAe4LJfKy5bGtwae
+
+BTC
+bc1qc2xtuqdp7nx8phnj20v6urz527vw8ynwwdlpz7
+
+ETH
+0x326f3215C6e603be0b521A7f9F8F40D0D10e94BE
 
 Every donation is greatly appreciated and helps me continue working on future projects. Thank you for your support!
 
