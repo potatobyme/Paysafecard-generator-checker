@@ -1,5 +1,4 @@
 # Paysafecard-generator-checker
-# Paysafecard Generator
 
 Paysafecard Generator is a tool created for educational and testing purposes. This project demonstrates how a code generator works and is not intended to violate any laws or Paysafecard’s terms of service. Using this tool for illegal purposes is strictly prohibited.
 
@@ -17,7 +16,41 @@ Additionally, the program is currently only available in Polish. We are sorry fo
 
 ## **Requirements**
 - Python 3.8 or later.  
-- A suitable development environment.  
+- A suitable development environment.
+
+ ## **Tutorial: How to Run the Paysafecard Generator Project**
+1. Install Python
+First, make sure you have Python installed. If not, download it from python.org and install it, ensuring you check the option Add Python to PATH.
+
+After installation, verify Python is working by running the following in your terminal:
+python --version
+
+2. Install Dependencies
+Create a requirements.txt file in your project folder and add the following lines:
+
+requests
+beautifulsoup4
+lxml
+
+Install the dependencies with the following command:
+
+pip install -r requirements.txt
+Alternatively, you can install them individually:
+
+pip install requests
+pip install beautifulsoup4
+pip install lxml
+
+3. Run the Program
+After installing the dependencies, run your Python program:
+
+
+python generator.py
+
+If you use python3, use this command instead:
+
+
+python3 generator.py
 
 ---
 
